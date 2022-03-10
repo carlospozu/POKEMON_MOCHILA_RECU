@@ -1,234 +1,231 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="663.0" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/11.0.2"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokemon.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="663.0" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokemon.HelloController">
    <padding>
-      <Insets right="-10.0" top="10.0"/>
+      <Insets right="-10.0" top="10.0" />
    </padding>
-   <Label fx:id="continuar" disable="true" layoutX="20.0" layoutY="369.0" onMouseClicked="#avanzar"
-          text="ELEGIR POKEMON" textFill="#f5f5f5"/>
-   <Label  layoutX="589.0" layoutY="369.0" text="SALIR" textFill="#fcfcfc"/>
+   <Label fx:id="continuar" disable="true" layoutX="20.0" layoutY="369.0" onMouseClicked="#avanzar" text="MOCHILA" textFill="#f5f5f5" />
+   <Label layoutX="589.0" layoutY="369.0" text="SALIR" textFill="#fcfcfc" />
    <GridPane layoutY="29.0" prefHeight="340.0" prefWidth="663.0" style="-fx-background-color: #339FFF;">
       <columnConstraints>
-         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       </columnConstraints>
       <rowConstraints>
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
       <VBox fx:id="pokemon1" onMouseClicked="#pulsar1" prefHeight="200.0" prefWidth="100.0">
          <HBox prefHeight="26.0" prefWidth="221.0">
             <Label fx:id="nombre1" text="Label">
                <HBox.margin>
-                  <Insets left="25.0"/>
+                  <Insets left="25.0" />
                </HBox.margin>
             </Label>
             <Label fx:id="nivel1" text="Label">
                <HBox.margin>
-                  <Insets left="115.0"/>
+                  <Insets left="115.0" />
                </HBox.margin>
             </Label>
          </HBox>
          <HBox prefHeight="0.0" prefWidth="221.0">
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <center>
-                  <ImageView fx:id="foto1" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true"
-                             preserveRatio="true" BorderPane.alignment="CENTER"/>
+                  <ImageView fx:id="foto1" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <ImageView fx:id="sexo1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets top="90.0"/>
+                  <Insets top="90.0" />
                </HBox.margin>
             </ImageView>
          </HBox>
          <HBox prefHeight="25.0" prefWidth="221.0">
             <ImageView fx:id="ps1" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG"/>
+               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG" />
             </ImageView>
-            <ProgressBar fx:id="vida1" prefWidth="200.0" progress="0.0"/>
+            <ProgressBar fx:id="vida1" prefWidth="200.0" progress="0.0" />
          </HBox>
-         <Label fx:id="vidanum1" text="Label"/>
+         <Label fx:id="vidanum1" text="Label" />
       </VBox>
       <VBox fx:id="pokemon2" onMouseClicked="#pulsar2" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
          <HBox prefHeight="26.0" prefWidth="221.0">
             <Label fx:id="nombre2" text="Label">
                <HBox.margin>
-                  <Insets left="25.0"/>
+                  <Insets left="25.0" />
                </HBox.margin>
             </Label>
             <Label fx:id="nivel2" text="Label">
                <HBox.margin>
-                  <Insets left="115.0"/>
+                  <Insets left="115.0" />
                </HBox.margin>
             </Label>
          </HBox>
          <HBox prefHeight="0.0" prefWidth="221.0">
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <center>
-                  <ImageView fx:id="foto2" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true"
-                             preserveRatio="true" BorderPane.alignment="CENTER"/>
+                  <ImageView fx:id="foto2" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <ImageView fx:id="sexo2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets top="90.0"/>
+                  <Insets top="90.0" />
                </HBox.margin>
             </ImageView>
          </HBox>
          <HBox prefHeight="25.0" prefWidth="221.0">
             <ImageView fx:id="ps2" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG"/>
+               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG" />
             </ImageView>
-            <ProgressBar fx:id="vida2" prefWidth="200.0" progress="0.0"/>
+            <ProgressBar fx:id="vida2" prefWidth="200.0" progress="0.0" />
          </HBox>
-         <Label fx:id="vidanum2" text="Label"/>
+         <Label fx:id="vidanum2" text="Label" />
       </VBox>
       <VBox fx:id="pokemon3" onMouseClicked="#pulsar3" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
          <HBox prefHeight="26.0" prefWidth="221.0">
             <Label fx:id="nombre3" text="Label">
                <HBox.margin>
-                  <Insets left="25.0"/>
+                  <Insets left="25.0" />
                </HBox.margin>
             </Label>
             <Label fx:id="nivel3" text="Label">
                <HBox.margin>
-                  <Insets left="115.0"/>
+                  <Insets left="115.0" />
                </HBox.margin>
             </Label>
          </HBox>
          <HBox prefHeight="0.0" prefWidth="221.0">
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <center>
-                  <ImageView fx:id="foto3" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true"
-                             preserveRatio="true" BorderPane.alignment="CENTER"/>
+                  <ImageView fx:id="foto3" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <ImageView fx:id="sexo3" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets top="90.0"/>
+                  <Insets top="90.0" />
                </HBox.margin>
             </ImageView>
          </HBox>
          <HBox prefHeight="25.0" prefWidth="221.0">
             <ImageView fx:id="ps3" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG"/>
+               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG" />
             </ImageView>
-            <ProgressBar fx:id="vida3" prefWidth="200.0" progress="0.0"/>
+            <ProgressBar fx:id="vida3" prefWidth="200.0" progress="0.0" />
          </HBox>
-         <Label fx:id="vidanum3" text="Label"/>
+         <Label fx:id="vidanum3" text="Label" />
       </VBox>
       <VBox fx:id="pokemon4" onMouseClicked="#pulsar4" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
          <HBox prefHeight="26.0" prefWidth="221.0">
             <Label fx:id="nombre4" text="Label">
                <HBox.margin>
-                  <Insets left="25.0"/>
+                  <Insets left="25.0" />
                </HBox.margin>
             </Label>
             <Label fx:id="nivel4" text="Label">
                <HBox.margin>
-                  <Insets left="115.0"/>
+                  <Insets left="115.0" />
                </HBox.margin>
             </Label>
          </HBox>
          <HBox prefHeight="0.0" prefWidth="221.0">
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <center>
-                  <ImageView fx:id="foto4" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true"
-                             preserveRatio="true" BorderPane.alignment="CENTER"/>
+                  <ImageView fx:id="foto4" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <ImageView fx:id="sexo4" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets top="90.0"/>
+                  <Insets top="90.0" />
                </HBox.margin>
             </ImageView>
          </HBox>
          <HBox prefHeight="25.0" prefWidth="221.0">
             <ImageView fx:id="ps4" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG"/>
+               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG" />
             </ImageView>
-            <ProgressBar fx:id="vida4" prefWidth="200.0" progress="0.0"/>
+            <ProgressBar fx:id="vida4" prefWidth="200.0" progress="0.0" />
          </HBox>
-         <Label fx:id="vidanum4" text="Label"/>
+         <Label fx:id="vidanum4" text="Label" />
       </VBox>
-      <VBox fx:id="pokemon5" onMouseClicked="#pulsar5" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1"
-            GridPane.rowIndex="1">
+      <VBox fx:id="pokemon5" onMouseClicked="#pulsar5" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <HBox prefHeight="26.0" prefWidth="221.0">
             <Label fx:id="nombre5" text="Label">
                <HBox.margin>
-                  <Insets left="25.0"/>
+                  <Insets left="25.0" />
                </HBox.margin>
             </Label>
             <Label fx:id="nivel5" text="Label">
                <HBox.margin>
-                  <Insets left="115.0"/>
+                  <Insets left="115.0" />
                </HBox.margin>
             </Label>
          </HBox>
          <HBox prefHeight="0.0" prefWidth="221.0">
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <center>
-                  <ImageView fx:id="foto5" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true"
-                             preserveRatio="true" BorderPane.alignment="CENTER"/>
+                  <ImageView fx:id="foto5" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <ImageView fx:id="sexo5" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets top="90.0"/>
+                  <Insets top="90.0" />
                </HBox.margin>
             </ImageView>
          </HBox>
          <HBox prefHeight="25.0" prefWidth="221.0">
             <ImageView fx:id="ps5" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG"/>
+               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG" />
             </ImageView>
-            <ProgressBar fx:id="vida5" prefWidth="200.0" progress="0.0"/>
+            <ProgressBar fx:id="vida5" prefWidth="200.0" progress="0.0" />
          </HBox>
-         <Label fx:id="vidanum5" text="Label"/>
+         <Label fx:id="vidanum5" text="Label" />
       </VBox>
-      <VBox fx:id="pokemon6" onMouseClicked="#pulsar6" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2"
-            GridPane.rowIndex="1">
+      <VBox fx:id="pokemon6" onMouseClicked="#pulsar6" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
          <HBox prefHeight="26.0" prefWidth="221.0">
             <Label fx:id="nombre6" text="Label">
                <HBox.margin>
-                  <Insets left="25.0"/>
+                  <Insets left="25.0" />
                </HBox.margin>
             </Label>
             <Label fx:id="nivel6" text="Label">
                <HBox.margin>
-                  <Insets left="115.0"/>
+                  <Insets left="115.0" />
                </HBox.margin>
             </Label>
          </HBox>
          <HBox prefHeight="0.0" prefWidth="221.0">
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <center>
-                  <ImageView fx:id="foto6" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true"
-                             preserveRatio="true" BorderPane.alignment="CENTER"/>
+                  <ImageView fx:id="foto6" fitHeight="89.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <ImageView fx:id="sexo6" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets top="90.0"/>
+                  <Insets top="90.0" />
                </HBox.margin>
             </ImageView>
          </HBox>
          <HBox prefHeight="25.0" prefWidth="221.0">
             <ImageView fx:id="ps6" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG"/>
+               <Image url="@../../../../java/com/example/pokemon/fotos/ps.PNG" />
             </ImageView>
-            <ProgressBar fx:id="vida6" prefWidth="200.0" progress="0.0"/>
+            <ProgressBar fx:id="vida6" prefWidth="200.0" progress="0.0" />
          </HBox>
-         <Label fx:id="vidanum6" text="Label"/>
+         <Label fx:id="vidanum6" text="Label" />
       </VBox>
    </GridPane>
 </AnchorPane>
