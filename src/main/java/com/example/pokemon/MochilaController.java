@@ -117,7 +117,6 @@ public class MochilaController {
             }
             HelloController.actualizar(event);
         }
-
     }
 
     public void usar4(javafx.scene.input.MouseEvent event) {
@@ -139,9 +138,8 @@ public class MochilaController {
         customAlert.setContentText("Todos los POKEMON CURADOS");
         customAlert.getDialogPane().getButtonTypes().addAll(volver);
         showAlert(customAlert, event);
-
-
     }
+
     private static void showAlert(Alert alert, javafx.scene.input.MouseEvent event) {
 
         Optional<ButtonType> resultado = alert.showAndWait();
@@ -151,10 +149,6 @@ public class MochilaController {
             stage.close();
         }
     }
-
-
-
-
 
     public void pokemonPasado(HelloController Hellocontroller) {
         this.HelloController= Hellocontroller;
