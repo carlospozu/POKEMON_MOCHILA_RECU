@@ -125,7 +125,7 @@ public class HelloControllerCombate {
         curar.setDisable(true);
     }
 
-    public void curar() {
+    public void curar(javafx.scene.input.MouseEvent event) {
         Random g = new Random();
         int a = g.nextInt(76) + 25;
         pokemonSeleccionado.vidaRestante = pokemonSeleccionado.vidaRestante + a;
@@ -135,7 +135,7 @@ public class HelloControllerCombate {
         vidaBarra = (pokemonSeleccionado.vidaRestante / pokemonSeleccionado.vida);
         vidaPokemon.setProgress(vidaBarra);
         vidaNumPokemon.setText(String.valueOf(pokemonSeleccionado.vidaRestante));
-        HelloController.actualizar();
+        HelloController.actualizar(event);
 
         Random h = new Random();
         int b = h.nextInt(76) + 25;
@@ -160,7 +160,7 @@ public class HelloControllerCombate {
                 vidaBarra = (pokemonSeleccionado.vidaRestante / pokemonSeleccionado.vida);
                 vidaPokemon.setProgress(vidaBarra);
                 vidaNumPokemon.setText(String.valueOf(pokemonSeleccionado.vidaRestante));
-                HelloController.actualizar();
+                HelloController.actualizar(event);
             } else {
                 menu(event);
             }if (pokemonSeleccionado.vidaRestante <= 0){
@@ -184,7 +184,7 @@ public class HelloControllerCombate {
                 vidaBarra = (pokemonSeleccionado.vidaRestante / pokemonSeleccionado.vida);
                 vidaPokemon.setProgress(vidaBarra);
                 vidaNumPokemon.setText(String.valueOf(pokemonSeleccionado.vidaRestante));
-                HelloController.actualizar();
+                HelloController.actualizar(event);
             }
             else {
                 menu(event);
@@ -211,7 +211,7 @@ public class HelloControllerCombate {
                 vidaBarra = (pokemonSeleccionado.vidaRestante / pokemonSeleccionado.vida);
                 vidaPokemon.setProgress(vidaBarra);
                 vidaNumPokemon.setText(String.valueOf((pokemonSeleccionado.vidaRestante)));
-                HelloController.actualizar();
+                HelloController.actualizar(event);
             } else {menu(event);}
             if (pokemonSeleccionado.vidaRestante <= 0){
                 menu(event);

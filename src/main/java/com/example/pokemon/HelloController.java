@@ -2,7 +2,10 @@ package com.example.pokemon;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
@@ -12,6 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Optional;
 
 
 public class HelloController {
@@ -19,12 +23,12 @@ public class HelloController {
     int seleccionado;
     Pokemon pokemonSeleccionado;
 
-    Pokemon p1 = new Pokemon("Gengar", 70, 140, 0, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\gengar.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\gengarespalda.png"), false);
-    Pokemon p2 = new Pokemon("Machoke", 47, 100, 0, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\machoke.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\machokeespalda.png"),false);
-    Pokemon p3 = new Pokemon("Togepi", 50, 100, 0, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\togepi.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\tegepiespalda.png"),false);
-    Pokemon p4 = new Pokemon("Mr.Mine", 68, 100, 0, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\mrmine.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\mrmimeespalda.png"),false);
-    Pokemon p5 = new Pokemon("Caterpie", 5, 100, 0, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\caterpie.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\caterpieespalda.png"),false);
-    Pokemon p6 = new Pokemon("Jynx", 85, 100, 0, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\jynx.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\jynxespalda.png"),false);
+    Pokemon p1 = new Pokemon("Gengar", 70, 140, 140, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\gengar.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\gengarespalda.png"), false);
+    Pokemon p2 = new Pokemon("Machoke", 47, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\machoke.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\machokeespalda.png"),false);
+    Pokemon p3 = new Pokemon("Togepi", 50, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\togepi.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\tegepiespalda.png"),false);
+    Pokemon p4 = new Pokemon("Mr.Mine", 68, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\mrmine.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\mrmimeespalda.png"),false);
+    Pokemon p5 = new Pokemon("Caterpie", 5, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\caterpie.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\caterpieespalda.png"),false);
+    Pokemon p6 = new Pokemon("Jynx", 85, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\jynx.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\jynxespalda.png"),false);
 
     //Pokemon1
     @FXML
@@ -135,18 +139,13 @@ public class HelloController {
     @FXML
     public void initialize() {
 
-        float mitad1 = p1.vida/2;
-        float mitad2 = p2.vida/2;
-        float mitad3 = p3.vida/2;
-        float mitad4 = p4.vida/2;
-        float mitad5 = p5.vida/2;
-        float mitad6 = p6.vida/2;
-        p1.vidaRestante = mitad1;
-        p2.vidaRestante = mitad2;
-        p3.vidaRestante = mitad3;
-        p4.vidaRestante = mitad4;
-        p5.vidaRestante = mitad5;
-        p6.vidaRestante = mitad6;
+
+        p1.vidaRestante = p1.vidaRestante/2;
+        p2.vidaRestante = p2.vidaRestante/2;
+        p3.vidaRestante = p3.vidaRestante/2;
+        p4.vidaRestante = p4.vidaRestante/2;
+        p5.vidaRestante = p5.vidaRestante/2;
+        p6.vidaRestante = p6.vidaRestante/2;
 
         float vid1 = p1.vidaRestante;
         float vidaBarra1= (vid1/p1.vida);
@@ -315,19 +314,23 @@ public class HelloController {
     }
 
 
-    public void actualizar(){
+    public void actualizar(javafx.scene.input.MouseEvent event){
+
         vida1.setProgress(p1.vidaRestante/p1.vida);
         vida2.setProgress(p2.vidaRestante/p2.vida);
-        vida3.setProgress(p3.vidaRestante/p1.vida);
-        vida4.setProgress(p4.vidaRestante/p1.vida);
-        vida5.setProgress(p5.vidaRestante/p1.vida);
-        vida6.setProgress(p6.vidaRestante/p1.vida);
+        vida3.setProgress(p3.vidaRestante/p3.vida);
+        vida4.setProgress(p4.vidaRestante/p4.vida);
+        vida5.setProgress(p5.vidaRestante/p5.vida);
+        vida6.setProgress(p6.vidaRestante/p6.vida);
         vidanum1.setText(String.valueOf(p1.vidaRestante));
         vidanum2.setText(String.valueOf(p2.vidaRestante));
         vidanum3.setText(String.valueOf(p3.vidaRestante));
         vidanum4.setText(String.valueOf(p4.vidaRestante));
         vidanum5.setText(String.valueOf(p5.vidaRestante));
         vidanum6.setText(String.valueOf(p6.vidaRestante));
+        if (p1.vidaRestante==p1.vida && p2.vidaRestante==p2.vida &&  p3.vidaRestante==p3.vida && p4.vidaRestante == p4.vida && p5.vidaRestante == p5.vida && p6.vidaRestante == p6.vida) {
+            MochilaController.menu(event);
+        }
     }
 
     public void resetear(){
@@ -385,9 +388,11 @@ public class HelloController {
         v.initialize(pokemonSeleccionado);
         v.pokemonPasado(this);
         }
-
     }
+
+
 }
+
 
 
 

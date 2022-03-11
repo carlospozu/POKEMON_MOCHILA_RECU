@@ -3,14 +3,22 @@ package com.example.pokemon;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.Optional;
 
 public class MochilaController {
+
+    static ButtonType volver = new ButtonType("SALIR", ButtonBar.ButtonData.BACK_PREVIOUS);
     private HelloController HelloController;
     Pokemon pokemonSeleccionado;
     Mochila mochila = new Mochila("OBJETO A", "CURA 10 pùntos de la vida del pokemon", "OBJETO B", "Cura 20 puntos de vida del pokemon", "OBJETO C", "Cura 10% de la vida del pokemon","OBJETO D", "Cura 20% de la vida del pokemon" ,new File("src\\main\\java\\com\\example\\pokemon\\fotos\\objeto1.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\objeto2.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\objeto3.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\objeto4.png"));
@@ -43,8 +51,6 @@ public class MochilaController {
     ImageView foto3;
     @FXML
     ImageView foto4;
-    @FXML
-    ImageView back;
     @FXML
     ImageView fondo1;
     @FXML
@@ -80,48 +86,74 @@ public class MochilaController {
 
 
 
-    public void usar1() {
+    public void usar1(javafx.scene.input.MouseEvent event) {
         if (pokemonSeleccionado.vidaRestante< pokemonSeleccionado.vida){
         pokemonSeleccionado.vidaRestante = pokemonSeleccionado.vidaRestante + 10;
         if (pokemonSeleccionado.vidaRestante> pokemonSeleccionado.vida){
             pokemonSeleccionado.vidaRestante = pokemonSeleccionado.vida;
         }
-        HelloController.actualizar();
+        HelloController.actualizar(event);
         }
     }
 
-    public void usar2() {
+    public void usar2(javafx.scene.input.MouseEvent event) {
         if (pokemonSeleccionado.vidaRestante< pokemonSeleccionado.vida) {
             pokemonSeleccionado.vidaRestante = pokemonSeleccionado.vidaRestante + 20;
             if (pokemonSeleccionado.vidaRestante > pokemonSeleccionado.vida) {
                 pokemonSeleccionado.vidaRestante = pokemonSeleccionado.vida;
             }
-            HelloController.actualizar();
+            HelloController.actualizar(event);
         }
     }
 
-    public void usar3() {
+    public void usar3(javafx.scene.input.MouseEvent event) {
         if (pokemonSeleccionado.vidaRestante< pokemonSeleccionado.vida) {
             float cont = (float) (pokemonSeleccionado.vidaRestante * 0.1);
             pokemonSeleccionado.vidaRestante = pokemonSeleccionado.vidaRestante + cont;
             if (pokemonSeleccionado.vidaRestante > pokemonSeleccionado.vida) {
                 pokemonSeleccionado.vidaRestante = pokemonSeleccionado.vida;
             }
-            HelloController.actualizar();
+            HelloController.actualizar(event);
         }
 
     }
 
-    public void usar4() {
+    public void usar4(javafx.scene.input.MouseEvent event) {
         if (pokemonSeleccionado.vidaRestante< pokemonSeleccionado.vida) {
             float cont1 = (float) (pokemonSeleccionado.vidaRestante * 0.2);
             pokemonSeleccionado.vidaRestante = pokemonSeleccionado.vidaRestante + cont1;
             if (pokemonSeleccionado.vidaRestante > pokemonSeleccionado.vida) {
                 pokemonSeleccionado.vidaRestante = pokemonSeleccionado.vida;
             }
-            HelloController.actualizar();
+            HelloController.actualizar(event);
         }
     }
+
+    @FXML
+    static void menu(javafx.scene.input.MouseEvent event) {
+
+        Alert customAlert = new Alert(Alert.AlertType.NONE);
+        customAlert.setTitle("ENHORABUENA");
+        customAlert.setContentText("Todos los POKEMON CURADOS");
+        customAlert.getDialogPane().getButtonTypes().addAll(volver);
+        showAlert(customAlert, event);
+
+
+    }
+    private static void showAlert(Alert alert, javafx.scene.input.MouseEvent event) {
+
+        Optional<ButtonType> resultado = alert.showAndWait();
+        if(resultado.get() == volver) {
+            Node source = (Node) event.getSource();
+            Stage stage = (Stage) source.getScene().getWindow();
+            stage.close();
+        }
+    }
+
+
+
+
+
     public void pokemonPasado(HelloController Hellocontroller) {
         this.HelloController= Hellocontroller;
     }
