@@ -26,6 +26,8 @@ public class MochilaController {
     @FXML
     Label titulo;
     @FXML
+    Label salir;
+    @FXML
     Label descripcion;
     @FXML
     Label objeto1;
@@ -156,5 +158,11 @@ public class MochilaController {
 
     public void pokemonPasado(HelloController Hellocontroller) {
         this.HelloController= Hellocontroller;
+    }
+
+    public void cerrarPestana(MouseEvent event) {
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 }
