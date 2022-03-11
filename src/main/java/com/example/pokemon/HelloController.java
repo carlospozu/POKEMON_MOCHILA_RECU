@@ -2,10 +2,9 @@ package com.example.pokemon;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
@@ -15,20 +14,19 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Optional;
 
 
 public class HelloController {
 
-    int seleccionado;
+
     Pokemon pokemonSeleccionado;
 
-    Pokemon p1 = new Pokemon("Gengar", 70, 140, 140, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\gengar.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\gengarespalda.png"), false);
-    Pokemon p2 = new Pokemon("Machoke", 47, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\machoke.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\machokeespalda.png"),false);
-    Pokemon p3 = new Pokemon("Togepi", 50, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\togepi.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\tegepiespalda.png"),false);
-    Pokemon p4 = new Pokemon("Mr.Mine", 68, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\mrmine.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\mrmimeespalda.png"),false);
-    Pokemon p5 = new Pokemon("Caterpie", 5, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\caterpie.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\caterpieespalda.png"),false);
-    Pokemon p6 = new Pokemon("Jynx", 85, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\jynx.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\jynxespalda.png"),false);
+    Pokemon p1 = new Pokemon("Gengar", 70, 140, 140, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\gengar.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"),false);
+    Pokemon p2 = new Pokemon("Machoke", 47, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\machoke.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"),false);
+    Pokemon p3 = new Pokemon("Togepi", 50, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\togepi.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"),false);
+    Pokemon p4 = new Pokemon("Mr.Mine", 68, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\mrmine.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\masc.png"),false);
+    Pokemon p5 = new Pokemon("Caterpie", 5, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\caterpie.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"),false);
+    Pokemon p6 = new Pokemon("Jynx", 85, 100, 100, new File("src\\main\\java\\com\\example\\pokemon\\fotos\\jynx.png"), new File("src\\main\\java\\com\\example\\pokemon\\fotos\\fem.png"),false);
 
     //Pokemon1
     @FXML
@@ -227,9 +225,6 @@ public class HelloController {
         vidanum1.setTextFill(Color.YELLOW);
         pokemon1.setStyle("-fx-border-color: #47175e; -fx-background-color:#61355e; -fx-border-width:3");
         pokemonSeleccionado = p1;
-     //   p1.seleccionado = true;
-
-
     }
 
     @FXML
@@ -242,10 +237,7 @@ public class HelloController {
         nivel2.setTextFill(Color.YELLOW);
         vidanum2.setTextFill(Color.YELLOW);
         pokemon2.setStyle("-fx-border-color: #47175e; -fx-background-color:#61355e; -fx-border-width:3");
-       pokemonSeleccionado = p2;
-      //  p2.seleccionado = true;
-
-
+        pokemonSeleccionado = p2;
     }
 
     @FXML
@@ -259,9 +251,6 @@ public class HelloController {
         vidanum3.setTextFill(Color.YELLOW);
         pokemon3.setStyle("-fx-border-color: #47175e; -fx-background-color:#61355e; -fx-border-width:3");
         pokemonSeleccionado = p3;
-     //   p3.seleccionado = true;
-
-
     }
 
     @FXML
@@ -275,10 +264,6 @@ public class HelloController {
         vidanum4.setTextFill(Color.YELLOW);
         pokemon4.setStyle("-fx-border-color: #47175e; -fx-background-color:#61355e; -fx-border-width:3");
         pokemonSeleccionado = p4;
-
-       // p4.seleccionado= true;
-
-
     }
 
     @FXML
@@ -292,10 +277,6 @@ public class HelloController {
         vidanum5.setTextFill(Color.YELLOW);
         pokemon5.setStyle("-fx-border-color: #47175e; -fx-background-color:#61355e; -fx-border-width:3");
         pokemonSeleccionado = p5;
-
-       // p5.seleccionado=true;
-
-
     }
 
     @FXML
@@ -309,29 +290,28 @@ public class HelloController {
         vidanum6.setTextFill(Color.YELLOW);
         pokemon6.setStyle("-fx-border-color: #47175e; -fx-background-color:#61355e; -fx-border-width:3");
        pokemonSeleccionado = p6;
-
-      //  p6.seleccionado = true;
     }
 
 
-    public void actualizar(javafx.scene.input.MouseEvent event){
+    public void actualizar(javafx.scene.input.MouseEvent event) {
 
-        vida1.setProgress(p1.vidaRestante/p1.vida);
-        vida2.setProgress(p2.vidaRestante/p2.vida);
-        vida3.setProgress(p3.vidaRestante/p3.vida);
-        vida4.setProgress(p4.vidaRestante/p4.vida);
-        vida5.setProgress(p5.vidaRestante/p5.vida);
-        vida6.setProgress(p6.vidaRestante/p6.vida);
+        vida1.setProgress(p1.vidaRestante / p1.vida);
+        vida2.setProgress(p2.vidaRestante / p2.vida);
+        vida3.setProgress(p3.vidaRestante / p3.vida);
+        vida4.setProgress(p4.vidaRestante / p4.vida);
+        vida5.setProgress(p5.vidaRestante / p5.vida);
+        vida6.setProgress(p6.vidaRestante / p6.vida);
         vidanum1.setText(String.valueOf(p1.vidaRestante));
         vidanum2.setText(String.valueOf(p2.vidaRestante));
         vidanum3.setText(String.valueOf(p3.vidaRestante));
         vidanum4.setText(String.valueOf(p4.vidaRestante));
         vidanum5.setText(String.valueOf(p5.vidaRestante));
         vidanum6.setText(String.valueOf(p6.vidaRestante));
-        if (p1.vidaRestante==p1.vida && p2.vidaRestante==p2.vida &&  p3.vidaRestante==p3.vida && p4.vidaRestante == p4.vida && p5.vidaRestante == p5.vida && p6.vidaRestante == p6.vida) {
+        if (p1.vidaRestante == p1.vida && p2.vidaRestante == p2.vida && p3.vidaRestante == p3.vida && p4.vidaRestante == p4.vida && p5.vidaRestante == p5.vida && p6.vidaRestante == p6.vida) {
             MochilaController.menu(event);
         }
     }
+
 
     public void resetear(){
         continuar.setDisable(false);
@@ -379,18 +359,14 @@ public class HelloController {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Mochila.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 500);
-        stage.setTitle("ESCOGE POKEMON");
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
-        //HelloControllerCombate v=fxmlLoader.getController();
-            MochilaController v =fxmlLoader.getController();
+        MochilaController v =fxmlLoader.getController();
         v.initialize(pokemonSeleccionado);
         v.pokemonPasado(this);
         }
     }
-
-
 }
 
 
